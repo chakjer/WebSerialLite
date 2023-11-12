@@ -21,6 +21,7 @@ I'm sorry that the current version is already the Pro version. XD
 - Light weight (<3k)
 - Timestamp
 - Event driven
+- Authorization added
 
 ## Dependencies
 
