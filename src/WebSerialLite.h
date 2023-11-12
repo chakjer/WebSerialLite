@@ -33,7 +33,7 @@ typedef std::function<void(AsyncWebSocketClient *, uint16_t code,
 
 class WebSerialClass : public Print {
  public:
-  void begin(AsyncWebServer *server, const char *url = "/webserial");
+  void begin(AsyncWebServer *server, const char *url = "/webserial", const char *username, const char *password);
 
   void onConnect(ConnHandler callbackFunc);
   void onDisconnect(DisconnHandler callbackFunc);

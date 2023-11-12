@@ -1,7 +1,7 @@
 #include "WebSerialLite.h"
 #include "WebSerialWebPage.h"
 
-void WebSerialClass::begin(AsyncWebServer *server, const char *url) {
+void WebSerialClass::begin(AsyncWebServer *server, const char *url, const char *username, const char *password) {
   _server = server;
   if (strlen(username) > 0){
     _authRequired = true;
