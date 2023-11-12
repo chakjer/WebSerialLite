@@ -12,7 +12,7 @@ void WebSerialClass::begin(AsyncWebServer *server, const char *url) {
     _username = "";
     _password = "";
   }
-  _server->on(url, HTTP_GET, [](AsyncWebServerRequest *request) {
+  _server->on(url, HTTP_GET, [&](AsyncWebServerRequest *request) {
     // Send Webpage
     if(_authRequired){
       if(!request->authenticate(_username.c_str(), _password.c_str())){
