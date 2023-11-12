@@ -54,6 +54,10 @@ class WebSerialClass : public Print {
   RecvMsgHandler _recvMsgCallback = NULL;
   RecvMsgHandlerPlus _recvMsgCallbackPlus = NULL;
   ErrHandler _errCallback = NULL;
+#Authorization
+  String _username = "";
+  String _password = "";
+  bool _authRequired = false;
 
 #if defined(WEBSERIAL_DEBUG)
   void DEBUG_WEB_SERIAL(const char *message);
