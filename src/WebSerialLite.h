@@ -54,7 +54,7 @@ class WebSerialClass : public Print {
   RecvMsgHandler _recvMsgCallback = NULL;
   RecvMsgHandlerPlus _recvMsgCallbackPlus = NULL;
   ErrHandler _errCallback = NULL;
-#Authorization
+  //Authorization
   String _username = "";
   String _password = "";
   bool _authRequired = false;
