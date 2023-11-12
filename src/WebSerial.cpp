@@ -3,8 +3,22 @@
 
 void WebSerialClass::begin(AsyncWebServer *server, const char *url) {
   _server = server;
+  if (strlen(username) > 0){
+    _authRequired = true;
+    _username = username;
+    _password = password;
+  }else{
+    _authRequired = false;
+    _username = "";
+    _password = "";
+  }
   _server->on(url, HTTP_GET, [](AsyncWebServerRequest *request) {
     // Send Webpage
+    if(_authRequired){
+      if(!request->authenticate(_username.c_str(), _password.c_str())){
+        return request->requestAuthentication();
+      }
+    }
     AsyncWebServerResponse *response = request->beginResponse_P(
         200, "text/html", WEBSERIAL_HTML, WEBSERIAL_HTML_SIZE);
     response->addHeader("Content-Encoding", "gzip");
